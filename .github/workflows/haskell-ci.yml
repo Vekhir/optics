@@ -292,6 +292,8 @@ jobs:
           echo "package metametapost" >> cabal.project
           echo "    ghc-options: -Werror=missing-methods" >> cabal.project
           cat >> cabal.project <<EOF
+          packages:
+            https://hackage.haskell.org/package/indexed-traversable-0.1.3/candidate/indexed-traversable-0.1.3.tar.gz
           EOF
           $HCPKG list --simple-output --names-only | perl -ne 'for (split /\s+/) { print "constraints: $_ installed\n" unless /^(indexed-profunctors|metametapost|optics|optics-core|optics-extra|optics-sop|optics-th|optics-vl|template-haskell-optics)$/; }' >> cabal.project.local
           cat cabal.project

@@ -13,3 +13,5 @@ packages:
   metametapost/*.cabal
 
 tests: true
+
+packages: https://hackage.haskell.org/package/indexed-traversable-0.1.3/candidate/indexed-traversable-0.1.3.tar.gz
